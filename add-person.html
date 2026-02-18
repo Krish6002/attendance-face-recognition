@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Add Person</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body data-page="add-person">
+  <header class="top-bar">
+    <a href="index.html" class="back-link">&larr; Back</a>
+    <h1>Add Person</h1>
+  </header>
+
+  <main class="content">
+    <section class="card">
+      <h2>Register a New Person</h2>
+      <form id="addPersonForm" class="form">
+        <div class="form-field">
+          <label for="fullName">Full Name *</label>
+          <input id="fullName" name="fullName" required>
+        </div>
+
+        <div class="form-field">
+          <label for="usn">USN (Unique ID) *</label>
+          <input id="usn" name="usn" required>
+        </div>
+
+        <div class="form-field">
+          <label for="personImages">Upload Photos *</label>
+          <input id="personImages" name="photos" type="file" accept="image/*" multiple required />
+        </div>
+
+        <button type="submit" class="btn primary">Save Person</button>
+      </form>
+
+      <p id="addPersonStatus" class="status"></p>
+    </section>
+  </main>
+
+  <script src="frontend.js" defer></script>
+</body>
+</html>

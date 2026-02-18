@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Smart Attendance System</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <h1>AI ATTENDANCE SYSTEM</h1>
+  </header>
+
+  <div class="tabs">
+    <button class="tab-btn active" data-tab="detect">Detect</button>
+    <button class="tab-btn" data-tab="add">Add Student</button>
+  </div>
+
+  <!-- ===== DETECT TAB ===== -->
+  <section id="tab-detect" class="tab-content active">
+    <div class="detect-controls">
+      <button id="uploadImageBtn" class="btn primary">Upload</button>
+      <button id="openCameraBtn" class="btn secondary">Camera</button>
+      <input type="file" id="detectFileInput" hidden />
+    </div>
+
+    <div id="cameraArea" class="hidden">
+      <video id="cameraVideo" autoplay playsinline style="width: 100%; max-width: 500px; border-radius: 8px;"></video>
+      <div class="camera-actions">
+        <button id="captureBtn" class="btn primary">Capture &amp; Mark Attendance</button>
+        <button id="closeCameraBtn" class="btn secondary">Close Camera</button>
+      </div>
+    </div>
+
+    <div class="detect-layout">
+      <div class="image-container">
+        <img id="detectImage" src="" alt="" style="max-width:100%; max-height:600px; display:block;" />
+        <canvas id="detectCanvas" style="position:absolute; left:0; top:0; pointer-events:none;"></canvas>
+      </div>
+      <div id="detectResults" class="results-panel"></div>
+    </div>
+  </section>
+
+  <!-- ===== ADD STUDENT TAB ===== -->
+  <section id="tab-add" class="tab-content">
+    <div class="card">
+      <h2>Register Student</h2>
+      <form id="addPersonForm">
+        <div class="form-field">
+          <label for="fullName">Student Name</label>
+          <input type="text" id="fullName" name="fullName" required>
+        </div>
+
+        <div class="form-field">
+          <label for="usn">USN (Unique ID)</label>
+          <input type="text" id="usn" name="usn" required>
+        </div>
+
+        <div class="form-field">
+          <label for="personImages">Photos</label>
+          <input id="personImages" name="photos" type="file" multiple required />
+        </div>
+
+        <button type="submit" class="btn primary">Save Record</button>
+      </form>
+      <p id="addPersonStatus"></p>
+    </div>
+  </section>
+
+<script src="frontend.js" defer></script>
+</body>
+</html>
